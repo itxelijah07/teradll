@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  terabox-bot:
+    build: .
+    container_name: terabox-bot
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - BOT_TOKEN=${BOT_TOKEN}
+    volumes:
+      - /tmp:/tmp
